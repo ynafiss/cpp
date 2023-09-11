@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 01:47:53 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/13 14:07:00 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/08/31 16:50:56 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/08/31 22:27:09 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-void Zombie::set_name(std::string newName){
-    this->name = newName;
-}
 
-void Zombie::annonce(void){
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#include "ClapTrap.hpp"
 
-Zombie::~Zombie(void){
-}
+class FragTrap: public ClapTrap{
+    public:
+        FragTrap(std::string name);
+        void    highFivesGuys(void);
+        ~FragTrap(void);
+};
+
+#endif

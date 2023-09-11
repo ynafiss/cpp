@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 01:47:53 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/13 14:07:00 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/08/14 10:19:44 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/08/15 10:28:50 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
+#include "Weapon.hpp"
 
-void Zombie::set_name(std::string newName){
-    this->name = newName;
+int main()
+{
+{
+Weapon club = Weapon("crude spiked club");
+HumanA bob("Bob", club);
+bob.attack();
+club.setType("some other type of club");
+bob.attack();
 }
-
-void Zombie::annonce(void){
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+{
+Weapon club = Weapon("crude spiked club");
+HumanB jim("Jim");
+// jim.setWeapon(club);
+jim.attack();
+club.setType("some other type of club");
+jim.attack();
 }
-
-Zombie::~Zombie(void){
+return 0;
 }

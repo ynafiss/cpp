@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 01:47:53 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/13 14:07:00 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/08/30 12:23:21 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/08/31 22:25:55 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "FragTrap.hpp"
 
-void Zombie::set_name(std::string newName){
-    this->name = newName;
-}
+int main(){
+    FragTrap d(" << VV >> ");
 
-void Zombie::annonce(void){
-    std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
-
-Zombie::~Zombie(void){
+    d.attack(" he ");
+    d.takeDamage(2);
+    d.beRepaired(2);
+    d.attack(" >> ME << ");
+    d.takeDamage(2);
+    d.beRepaired(2);
 }
