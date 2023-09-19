@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:05:41 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/31 22:29:45 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/15 09:07:08 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 class ScavTrap: public ClapTrap{
     public:
+        ScavTrap();
+        ScavTrap(ScavTrap& ori);
+        ScavTrap& operator=(ScavTrap& ori);
         ScavTrap(std::string name);
         void    attack(std::string target);
         void    guardGate();

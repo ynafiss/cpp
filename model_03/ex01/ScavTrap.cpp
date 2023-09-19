@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:05:37 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/31 22:29:31 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/15 09:12:53 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,21 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name){
     std::cout << "ScavTrap constructer called" << std::endl;
     Name = name;
 };
+
+ScavTrap::ScavTrap():ClapTrap(){
+}
+
+ScavTrap::ScavTrap(ScavTrap& ori):ClapTrap(ori.name){
+    Name = ori.Name;
+}
+
+ScavTrap& ScavTrap::operator=(ScavTrap& ori){
+    if (this != &ori){
+        this->Name = ori.Name;    
+    }
+    return *this;
+        
+}
 
 void    ScavTrap::attack(std::string target){
     if (Energy <= 0){

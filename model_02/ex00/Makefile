@@ -1,12 +1,13 @@
 NAME=ex00
 SRC= Fixed.cpp main.cpp
-FLAGS= c++ -std=c++98 -Wall -Wextra -Werror
+FLAGS=-std=c++98 -Wall -Wextra -Werror
 OBJ= ${SRC:.cpp=.o}
+CXX=c++
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${FLAGS} ${SRC} -o ${NAME}
+	${CXX} ${FLAGS} ${SRC} -o ${NAME}
 
 clean:
 	rm -rf ${OBJ}

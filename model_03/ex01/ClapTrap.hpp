@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:22:50 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/31 14:10:29 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/13 17:56:42 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class ClapTrap{
         int         Attack;
     public:
         ClapTrap(std::string name);
+        ClapTrap();
         void attack(const std::string& target);
         ClapTrap& operator=(ClapTrap& ori);
         ClapTrap(ClapTrap& ori);
