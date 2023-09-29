@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 16:50:56 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/25 00:16:09 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/09/28 23:00:02 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/09/29 01:59:27 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
+#include <iostream>
 
-#include "ClapTrap.hpp"
-
-class FragTrap: public ClapTrap{
+class Animal
+{
+    protected:
+        std::string type;
     public:
-        FragTrap();
-        FragTrap(std::string name);
-        FragTrap(const FragTrap& ori);
-        void    highFivesGuys(void);
-        ~FragTrap(void);
+    Animal();
+    Animal(const Animal& ori);
+    Animal(std::string Type);
+    Animal& operator=(const Animal& ori);
+    virtual void makeSound();
+    ~Animal();
 };
 
 #endif

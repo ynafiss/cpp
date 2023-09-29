@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 16:50:50 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/25 00:16:38 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/09/28 23:00:07 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/09/28 23:43:33 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "Animal.hpp"
 
-FragTrap::FragTrap(std::string name):ClapTrap(name){
-    std::cout << "FragTrap constructer called" << std::endl;
-    Name = name;
+Animal::Animal(){
 }
 
-FragTrap::FragTrap(void){
+Animal::Animal(std::string Type) : type(Type){
 }
 
-FragTrap::FragTrap(const FragTrap& ori){
-    Name = ori.Name;
+Animal::Animal(const Animal& ori){
+    type = ori.type;
 }
 
-void highFivesGuys(){
-    std::cout << "High Five Guys !!" << std::endl;
+Animal&    Animal::operator=(const Animal& ori){
+    if (this != &ori)
+    {
+        this->type = ori.type;
+    }
+    return *this;
 }
 
-FragTrap::~FragTrap(){
-    std::cout << "FragTrap destructer called" << std::endl;
+void    Animal::makeSound(){
+    std::cout << "I DON'T KNOW WITCH SOUND SHOULD I MAKE" << std::endl;
 }
+

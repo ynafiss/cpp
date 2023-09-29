@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/31 16:50:50 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/25 00:16:38 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/09/29 01:57:39 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#ifndef DOG_HPP
+#define DOG_HPP
 
-FragTrap::FragTrap(std::string name):ClapTrap(name){
-    std::cout << "FragTrap constructer called" << std::endl;
-    Name = name;
-}
 
-FragTrap::FragTrap(void){
-}
+#include "Animal.hpp"
 
-FragTrap::FragTrap(const FragTrap& ori){
-    Name = ori.Name;
-}
+class Dog : public Animal{
+    public:
+        Dog();
+        Dog(const Dog& ori);
+        Dog(std::string Type);
+        Dog& operator=(const Dog& ori);
+        void makeSound();
+};
 
-void highFivesGuys(){
-    std::cout << "High Five Guys !!" << std::endl;
-}
-
-FragTrap::~FragTrap(){
-    std::cout << "FragTrap destructer called" << std::endl;
-}
+#endif

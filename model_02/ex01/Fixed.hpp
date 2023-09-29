@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 11:19:57 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/13 17:50:18 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/28 21:54:50 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ class Fixed{
 };
 
 std::ostream&   operator << (std::ostream& output, const Fixed&  ori);
-
-
 
 #endif

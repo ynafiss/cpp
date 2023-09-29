@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 12:22:46 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/08/31 14:10:14 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/25 00:16:56 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ ClapTrap::ClapTrap(std::string name){
     Attack = 20;
     std::cout << "Default constructor of " << Name << " called" << std::endl;
 }
+
+
 
 ClapTrap::ClapTrap(ClapTrap& ori){
     std::cout << "Copy constructor called" << std::endl;
