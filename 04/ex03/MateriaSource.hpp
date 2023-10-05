@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 17:27:36 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 17:28:04 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
-
-
-#include "Animal.hpp"
-
-class Dog : public Animal{
-    public:
-        Dog();
-        Dog(const Dog& ori);
-        Dog(std::string Type);
-        Dog& operator=(const Dog& ori);
-        void makeSound() const;
-        ~Dog();
-};
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #endif

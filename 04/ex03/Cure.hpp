@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 02:29:42 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 03:45:47 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
 
+#ifndef CURE_CPP
+#define CURE_CPP
 
-#include "Animal.hpp"
+#include "AMateria.hpp"
 
-class Dog : public Animal{
+class Cure : AMateria{
     public:
-        Dog();
-        Dog(const Dog& ori);
-        Dog(std::string Type);
-        Dog& operator=(const Dog& ori);
-        void makeSound() const;
-        ~Dog();
+        Cure();
+        Cure(const Cure& ori);
+        Cure&   operator=(const Cure& ori);
+        AMateria* clone() const;
+        void use(ICharacter &target) const;
+        ~Cure();
 };
+
 
 #endif

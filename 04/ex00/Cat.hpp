@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:00:17 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 01:18:34 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/29 16:45:26 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class Cat : public Animal{
         Cat(const Cat& ori);
         Cat(std::string Type);
         Cat& operator=(const Cat& ori);
-        void makeSound();
+        void makeSound() const;
+        ~Cat();
 };
 
 #endif

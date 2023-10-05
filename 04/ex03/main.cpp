@@ -5,29 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:26 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/30 15:54:27 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 16:41:40 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 16:43:11 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
 
-#include "WrongDog.hpp"
-#include "WrongCat.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-meta->makeSound();
-delete i;
-delete j;
-delete meta;
+// IMateriaSource* src = new MateriaSource();
+// src->learnMateria(new Ice());
+// src->learnMateria(new Cure());
+ICharacter* me = new Character("me");
+AMateria* tmp;
+tmp = src->createMateria("ice");
+me->equip(tmp);
+tmp = src->createMateria("cure");
+me->equip(tmp);
+ICharacter* bob = new Character("bob");
+me->use(0, *bob);
+me->use(1, *bob);
+delete bob;
+delete me;
+delete src;
 return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/09/30 16:26:49 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal{
+    private:
+        Brain* dogBrain;
     public:
         Dog();
         Dog(const Dog& ori);

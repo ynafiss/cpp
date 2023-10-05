@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/02 16:11:39 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 16:35:59 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
+#include <iostream>
 
-#include "Animal.hpp"
+class AMateria; // Forward declaration
 
-class Dog : public Animal{
+class ICharacter
+{
     public:
-        Dog();
-        Dog(const Dog& ori);
-        Dog(std::string Type);
-        Dog& operator=(const Dog& ori);
-        void makeSound() const;
-        ~Dog();
+		ICharacter();
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+        virtual ~ICharacter() {}
 };
 
 #endif

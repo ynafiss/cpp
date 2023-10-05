@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 02:41:52 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 16:39:28 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include "AMateria.hpp"
 
+AMateria::AMateria(std::string const & type) : Type(type){
+}
 
-#include "Animal.hpp"
+std::string const & AMateria::getType() const{
+    return Type;
+}
 
-class Dog : public Animal{
-    public:
-        Dog();
-        Dog(const Dog& ori);
-        Dog(std::string Type);
-        Dog& operator=(const Dog& ori);
-        void makeSound() const;
-        ~Dog();
-};
-
-#endif
+void AMateria::use(ICharacter& target){
+    (void)target;
+}

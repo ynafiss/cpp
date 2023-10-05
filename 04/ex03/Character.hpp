@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/02 16:41:06 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 03:52:46 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
+#include "ICharacter.hpp"
 
-#include "Animal.hpp"
-
-class Dog : public Animal{
+class Character : public ICharacter{
+    private:
+        AMateria *materia[4];
     public:
-        Dog();
-        Dog(const Dog& ori);
-        Dog(std::string Type);
-        Dog& operator=(const Dog& ori);
-        void makeSound() const;
-        ~Dog();
+        Character();
+        void    equip(AMateria* m);
+        void    unequip(int idx);
+        void    use(int idx, ICharacter &target);
+        ~Character();
 };
 
 #endif

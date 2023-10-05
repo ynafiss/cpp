@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:14 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:47:24 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/09/28 23:00:26 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/01 17:09:15 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Dog.hpp"
 #include "Cat.hpp"
 
-Cat::Cat(){
-    std::cout << "CAT Default constructor called" << std::endl;
-    type = "Cat";
-}
+#include "WrongDog.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(const Cat& ori) : Animal(ori.type){
-    type = ori.type;
-}
+int main()
+{
+//    Animal j;
+   Cat    i;
 
-Cat&    Cat::operator=(const Cat& ori){
-    if (this != &ori){
-        type = ori.type;
-    }
-    return *this;
-}
+    i.makeSound();
+    // j.makeSound();
 
-
-void    Cat::makeSound() const{
-    std::cout << "Meaw Meaw" << std::endl;
-}
-
-Cat::~Cat(){
-    std::cout << "CAT Destructor called" << std::endl;
+return 0;
 }

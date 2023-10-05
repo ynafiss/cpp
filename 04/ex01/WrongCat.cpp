@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:14 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:47:24 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/09/29 18:07:47 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/09/30 15:29:14 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat(){
-    std::cout << "CAT Default constructor called" << std::endl;
-    type = "Cat";
+WrongCat::WrongCat(){
+    std::cout << "WrongCAT Default constructor called" << std::endl;
+    type = "WrongCat";
 }
 
-Cat::Cat(const Cat& ori) : Animal(ori.type){
+WrongCat::WrongCat(const WrongCat& ori) : WrongAnimal(ori.type){
     type = ori.type;
 }
 
-Cat&    Cat::operator=(const Cat& ori){
+WrongCat&    WrongCat::operator=(const WrongCat& ori){
     if (this != &ori){
         type = ori.type;
     }
@@ -29,10 +29,10 @@ Cat&    Cat::operator=(const Cat& ori){
 }
 
 
-void    Cat::makeSound() const{
-    std::cout << "Meaw Meaw" << std::endl;
+void    WrongCat::makeSound() const{
+    std::cout << "Wrong Meaw Meaw" << std::endl;
 }
 
-Cat::~Cat(){
-    std::cout << "CAT Destructor called" << std::endl;
+WrongCat::~WrongCat(){
+    std::cout << "WrongCAT Destructor called" << std::endl;
 }

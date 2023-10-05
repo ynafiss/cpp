@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/28 23:00:23 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/29 16:46:45 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 01:22:56 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/04 16:40:07 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#include "Cure.hpp"
 
+Cure::Cure() : AMateria("cure"){
+}
 
-#include "Animal.hpp"
+Cure::Cure(const Cure& ori) : AMateria(ori.getType()){
+}
 
-class Dog : public Animal{
-    public:
-        Dog();
-        Dog(const Dog& ori);
-        Dog(std::string Type);
-        Dog& operator=(const Dog& ori);
-        void makeSound() const;
-        ~Dog();
-};
+Cure&    Cure::operator=(const Cure& ori){
+    (void)ori;
+   return *this;
+}
 
-#endif
+void Cure::use(ICharacter &target) const{
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
+
+AMateria*    Cure::clone()const{
+    return new Cure(*this);    
+}
+
+Cure::~Cure(){
+}
