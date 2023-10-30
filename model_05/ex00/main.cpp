@@ -5,34 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 16:41:40 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/15 11:33:28 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/26 18:11:43 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/27 15:36:56 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
 
-#include "Ice.hpp"
-#include "Cure.hpp"
-#include "AMateria.hpp"
-#include "Character.hpp"
-#include "MateriaSource.hpp"
+int main() {
+    try {
+        Bureaucrat highGrade(150, "me");
+        Bureaucrat lowGrade(150 ,"not me");
 
-int main()
-{
-IMateriaSource* src = new MateriaSource();
-src->learnMateria(new Ice());
-src->learnMateria(new Cure());
-ICharacter* me = new Character("me");
-AMateria* tmp;
-tmp = src->createMateria("ice");
-me->equip(tmp);
-tmp = src->createMateria("cure");
-me->equip(tmp);
-ICharacter* bob = new Character("bob");
-me->use(0, *bob);
-me->use(1, *bob);
-delete bob;
-delete me;
-delete src;
-return 0;
+        std::cout << highGrade << std::endl;
+        std::cout << lowGrade << std::endl;
+
+        highGrade.increment();
+        lowGrade.decrement();
+
+        std::cout << highGrade << std::endl;
+        std::cout << lowGrade << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    return 0;
 }

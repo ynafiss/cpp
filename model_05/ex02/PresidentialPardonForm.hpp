@@ -1,17 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 03:06:41 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/04 16:41:28 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/29 15:13:59 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/29 16:19:40 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
-ICharacter::ICharacter(){}
 
-// ICharacter::~ICharacter(){}
+class PresidentialPardonForm : public Form{
+    public:
+        PresidentialPardonForm(std::string P_name);
+        
+}
+
+
+
+#endif

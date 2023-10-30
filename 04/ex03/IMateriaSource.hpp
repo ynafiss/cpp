@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:24:56 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/04 17:26:37 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/10/13 21:16:52 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 
 #include "AMateria.hpp"
 
-class IMateriaSource
-{
+class IMateriaSource {
 public:
-virtual ~IMateriaSource() {}
-virtual void learnMateria(AMateria*) = 0;
-virtual AMateria* createMateria(std::string const & type) = 0;
+    virtual void learnMateria(AMateria *m) = 0;
+    virtual AMateria *createMateria(const std::string &type) = 0;
+    virtual ~IMateriaSource(){}
 };
 
 #endif

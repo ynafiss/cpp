@@ -6,44 +6,63 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 23:46:30 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/04 03:53:20 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/10/15 11:32:15 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(){
-    for(int i = 0; i < 4; i++){
-        materia[i] = nullptr;
-    }
+    for (int i = 0; i < 4; ++i)
+        inventory[i] = nullptr;
 }
 
-void Character::equip(AMateria* m){
-    for (int i = 0; i < 4; i++){
-        if (materia[i] == nullptr){
-            materia[i] = m;
-            return ;
+Character::Character(const Character& ori){
+    for (int i = 0; i < 4; ++i)
+        inventory[i] = ori.inventory[i];
+}
+
+Character&  Character::operator=(const Character& ori){
+    if (this != &ori){
+        for (int i = 0; i < 4; ++i)
+            inventory[i] = ori.inventory[i];
+    }
+    return *this;
+}
+
+Character::Character(const std::string &name) : name(name) {
+    for (int i = 0; i < 4; ++i)
+        inventory[i] = nullptr;
+}
+
+
+std::string const &Character::getName() const {
+    return name;
+}
+
+void Character::equip(AMateria *m) {
+    for (int i = 0; i < 4; ++i) {
+        if (inventory[i] == nullptr) {
+            inventory[i] = m;
+            return;
         }
     }
-    return ;
 }
 
-void    Character::unequip(int idx){
-    if (idx < 0 || idx > 3){
-        std::cout << "Index Out Of Range" << std::endl;
-        return ;
+void Character::unequip(int idx) {
+    if (idx >= 0 && idx < 4)
+        inventory[idx] = nullptr;
+}
+
+void Character::use(int idx, ICharacter &target) {
+    if (idx >= 0 && idx < 4 && inventory[idx] != nullptr) {
+        inventory[idx]->use(target);
     }
-    else
-        materia[idx] = nullptr;
 }
 
-void    Character::use(int idx, ICharacter& target){
-    if (idx < 0 || idx > 3){
-        std::cout << "Index Out Of Range" << std::endl;
-        return ;
+Character::~Character() {
+    for (int i = 0; i < 4; ++i) {
+        if (inventory[i] != nullptr)
+            delete inventory[i];
     }
-    materia[idx]->use(target);
-}
-
-Character::~Character(){
 }

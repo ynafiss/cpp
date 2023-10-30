@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 02:29:42 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/04 03:45:47 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/10/12 18:23:19 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 
 #include "AMateria.hpp"
 
-class Cure : AMateria{
+class Cure : public  AMateria{
     public:
         Cure();
         Cure(const Cure& ori);
         Cure&   operator=(const Cure& ori);
         AMateria* clone() const;
-        void use(ICharacter &target) const;
+        void use(ICharacter &target) ;
         ~Cure();
 };
-
 
 #endif

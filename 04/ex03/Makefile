@@ -1,6 +1,6 @@
 NAME=Materia
-SRC= AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp main.cpp
-CPPFLAGS= -Wall -Wextra -Werror -std=c++98 
+SRC=  Character.cpp main.cpp MateriaSource.cpp AMateria.cpp Cure.cpp Ice.cpp 
+CPPFLAGS= -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 CXX = c++
 OBJ= ${SRC:.cpp=.o}
 
