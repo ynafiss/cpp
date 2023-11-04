@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:46:28 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/02 16:22:52 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/04 17:09:46 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,14 @@ int main(){
     ShrubberyCrationForm c("5555");
     Intern someRandomIntern;
     AForm* rrf;
-    rrf = someRandomIntern.makeForm("presiden4tial", "Bender");
 
-try {    rrf->beSigned(a);
+try {  
+    rrf = someRandomIntern.makeForm("presiddential", "Bender");
+    rrf->beSigned(a);
     c.beSigned(a);
     rrf->execute(a);
     }
     catch (const std::exception& e){
                 std::cerr << e.what() << '\n';
     }
-    catch (const char *){
-                std::cout << "The form you want to make dosn't exist !!" << std::endl;
-    }
-    
 }

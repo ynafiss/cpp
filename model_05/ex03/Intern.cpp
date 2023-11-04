@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 16:03:26 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/02 16:22:59 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/04 17:01:00 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ AForm   *Intern::makeForm(std::string form_name, std::string target){
         case 2:
             return new PresidentialPardonForm(target);
         default:
-            throw("lol");
+            throw (Intern::WrongFormName());
     }
+}
+
+
+const char *  Intern::WrongFormName::what() const throw(){
+    return "Wrong Form Name";
 }
