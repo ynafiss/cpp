@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 12:23:21 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/01 16:13:51 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/11/02 15:56:37 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/11/02 16:09:28 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#pragma once
 
-int main()
-{
-  ScavTrap a( "1337" );
-    ScavTrap a2( a );
+#include <iostream>
+#include "AForm.hpp"
+#include "ShrubberyCrationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
-    a.attack( "ALO" );
-    a.takeDamage( 10 );
-    a.beRepaired( 10 );
-    a.guardGate();
-}
+class Intern{
+    private:
+        std::string job;
+    public:
+        AForm*   makeForm(std::string form_name, std::string target);
+};

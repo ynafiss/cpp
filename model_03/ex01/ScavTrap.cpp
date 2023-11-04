@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 16:05:37 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/09/15 09:12:53 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/01 16:14:18 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name){
 ScavTrap::ScavTrap():ClapTrap(){
 }
 
-ScavTrap::ScavTrap(ScavTrap& ori):ClapTrap(ori.name){
+ScavTrap::ScavTrap(ScavTrap& ori):ClapTrap(ori.Name){
     Name = ori.Name;
 }
 

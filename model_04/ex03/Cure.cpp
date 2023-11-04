@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 12:23:21 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/01 16:13:51 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 01:22:56 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/06 11:28:40 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "Cure.hpp"
 
-int main()
-{
-  ScavTrap a( "1337" );
-    ScavTrap a2( a );
+Cure::Cure() : AMateria("cure"){
+}
 
-    a.attack( "ALO" );
-    a.takeDamage( 10 );
-    a.beRepaired( 10 );
-    a.guardGate();
+Cure::Cure(const Cure& ori) : AMateria(ori.getType()){
+}
+
+Cure&    Cure::operator=(const Cure& ori){
+    (void)ori;
+   return *this;
+}
+
+
+void Cure::use(ICharacter &target) const{
+    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}
+
+AMateria*    Cure::clone()const{
+    return new Cure(*this);    
+}
+
+Cure::~Cure(){
 }

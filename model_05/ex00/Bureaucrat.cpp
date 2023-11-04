@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 12:01:36 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/26 18:41:16 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/01 14:41:00 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ int Bureaucrat::getGrade() const{
 void	Bureaucrat::increment(){
     grade++;
     if (grade > 150)
-        throw GradeTooHighException();
+        throw GradeTooLowException();
 }
 
 void	Bureaucrat::decrement(){
     grade--;
     if (grade < 1)
-        throw GradeTooLowException();
+        throw GradeTooHighException();
 }
 
 Bureaucrat::Bureaucrat(int _grade, std::string _name) : name(_name){
     if (_grade < 1)
-        throw GradeTooLowException();
-    if (_grade > 150)
         throw GradeTooHighException();
+    if (_grade > 150)
+        throw GradeTooLowException();
     grade = _grade;
 }
 

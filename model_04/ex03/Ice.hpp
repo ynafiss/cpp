@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 12:23:21 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/01 16:13:51 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 01:28:13 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/05 13:31:49 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef ICE_CPP
+#define ICE_CPP
 
-int main()
-{
-  ScavTrap a( "1337" );
-    ScavTrap a2( a );
+#include "AMateria.hpp"
 
-    a.attack( "ALO" );
-    a.takeDamage( 10 );
-    a.beRepaired( 10 );
-    a.guardGate();
-}
+class Ice : public AMateria{
+    public:
+        Ice();
+        Ice(const Ice& ori);
+        Ice&   operator=(const Ice& ori);
+        AMateria* clone() const;
+        void use(ICharacter &target) const;
+        ~Ice();
+};
+
+
+#endif

@@ -1,5 +1,5 @@
 NAME=Bureaucrat
-SRC=Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCrationForm.cpp
+SRC=Bureaucrat.cpp Intern.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCrationForm.cpp
 CPPFLAGS= -Wall -Werror -Wextra -std=c++98
 CXX= c++
 OBJ= ${SRC:.cpp=.o}
@@ -17,6 +17,5 @@ fclean:
 
 sh:
 	rm -rf *_shrubbery
-
 
 re: fclean all

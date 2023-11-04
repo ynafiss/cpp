@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/30 12:23:21 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/01 16:13:51 by ynafiss          ###   ########.fr       */
+/*   Created: 2023/10/04 17:24:56 by ynafiss           #+#    #+#             */
+/*   Updated: 2023/10/05 10:55:31 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef IMATERIASOURCE_HPP
+#define IMATERIASOURCE_HPP
 
-int main()
+#include "AMateria.hpp"
+
+class IMateriaSource
 {
-  ScavTrap a( "1337" );
-    ScavTrap a2( a );
+    public:
+        virtual ~IMateriaSource() {}
+        virtual void learnMateria(AMateria*) = 0;
+        virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-    a.attack( "ALO" );
-    a.takeDamage( 10 );
-    a.beRepaired( 10 );
-    a.guardGate();
-}
+#endif

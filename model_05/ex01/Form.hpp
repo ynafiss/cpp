@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:40:50 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/29 12:34:59 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/10/31 16:36:37 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ class Form{
 				const char * what() const throw();
 		};
         Form();
+        Form(const Form & ori);
+        Form& operator=(const Form & ori);
         Form(std::string in_name,int in_grade, int in_exgrade);
         std::string getFormName();
         bool		getFormSign();

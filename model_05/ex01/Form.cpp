@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 17:33:43 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/10/28 18:10:12 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/10/31 18:31:26 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@ Form::Form(std::string in_name,int in_grade, int in_exgrade) : name(in_name), gr
     sign = false;
 }
 
+Form::Form(const Form &ori) : name(ori.name),  grade(ori.grade), exGrade(ori.exGrade){
+    if (this != &ori){
+        sign = ori.sign;
+    }
+}
+Form& Form::operator=(const Form & ori){
+    if (this != &ori){
+        sign = ori.sign;
+    }
+    return *this;
+}
 std::string Form::getFormName(){
     return name;
 }
@@ -29,6 +40,15 @@ bool    Form::getFormSign(){
 
 int   Form::getFormGrade(){
     return grade;
+}
+
+
+const char *  Form::GradeTooHighException::what() const throw(){
+    return "Grade Too High";
+}
+
+const char * Form::GradeTooLowException::what() const throw(){
+    return "Grade Too Low";
 }
 
 int   Form::getFormExGrade(){
