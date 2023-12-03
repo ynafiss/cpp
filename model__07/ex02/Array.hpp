@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 21:42:53 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/22 08:43:16 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/29 10:23:22 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,7 @@ class Array{
         Array(unsigned int n) : arraysize(n){
             element = new T[arraysize];
         }
-        Array(const Array& ori) : arraysize(ori.arraysize){
-            element = new T[arraysize];
-            for (unsigned int i = 0; i < arraysize; i++){
-                element[i] = ori.element[i];
-            }
-        }
+        Array(const Array& ori);
         Array& operator=(const Array& ori){
             delete [] element ;
             element = new T[ori.size];
@@ -51,3 +46,11 @@ class Array{
             return arraysize;
         }
 };
+
+template<typename T>
+Array<T>::Array(const Array& ori) : arraysize(ori.arraysize){
+    element = new T[arraysize];
+    for (unsigned int i = 0; i < arraysize; i++){
+        element[i] = ori.element[i];
+    }
+}

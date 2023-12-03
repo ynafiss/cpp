@@ -6,11 +6,15 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 09:53:53 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/26 10:48:16 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/29 11:08:35 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
+
+Span::Span(){};
+Span::Span(unsigned int n): N(n){};
+Span::~Span(){};
 
 int Span::shortestSpan(){
     std::sort(container.begin(), container.end());

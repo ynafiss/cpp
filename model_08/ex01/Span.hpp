@@ -6,7 +6,7 @@
 /*   By: ynafiss <ynafiss@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 06:08:41 by ynafiss           #+#    #+#             */
-/*   Updated: 2023/11/28 09:22:51 by ynafiss          ###   ########.fr       */
+/*   Updated: 2023/11/29 11:08:27 by ynafiss          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Span{
     public:
         Span();
         Span(unsigned int n);
+        ~Span();
         void    addNumber(int num);
         template <typename IT>
         void    addRangeNumber(IT start, IT end);
